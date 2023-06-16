@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oD8-d3-zeW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oD8-d3-zeW" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="72.333333333333343" y="104.00000000000001" width="269.33333333333326" height="179.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                             </view>
@@ -50,7 +50,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animationView" destination="oD8-d3-zeW" id="7UU-Ca-HLu"/>
+                        <outlet property="springAnimationView" destination="oD8-d3-zeW" id="JTx-Rb-7QX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

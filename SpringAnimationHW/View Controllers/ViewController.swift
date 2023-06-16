@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import SpringAnimation
 
 class ViewController: UIViewController {
+    
+    let animationSettings = AnimationSettings()
 
-    @IBOutlet var animationView: UIView!
+    @IBOutlet var springAnimationView: SpringView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +20,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func animationButtonTapped() {
-        
+        springAnimationView.animation = animationSettings.getAnimation()
+        springAnimationView.curve = animationSettings.getCurve()
+        springAnimationView.animate()
     }
     
 }
