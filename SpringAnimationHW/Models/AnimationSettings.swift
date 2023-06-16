@@ -10,8 +10,8 @@ import SpringAnimation
 
 struct AnimationSettings {
     
-    var currentAnimation: String
-    var currentCurve: String
+    var currentAnimation: String = "shake"
+    var currentCurve: String = "easeIn"
     
     mutating func getNewSettings() {
         let data = SpringInfoStore.shared
