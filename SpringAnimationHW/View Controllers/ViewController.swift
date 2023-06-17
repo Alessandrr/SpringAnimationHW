@@ -10,11 +10,11 @@ import SpringAnimation
 
 final class ViewController: UIViewController {
     
-    var animationSettings = AnimationSettings()
-
     @IBOutlet var springAnimationView: SpringView!
     @IBOutlet var settingsLabel: UILabel!
 
+    var animationSettings = AnimationSettings()
+    
     @IBAction func animationButtonTapped(_ sender: UIButton) {
         updateSettingsLabel()
         launchViewAnimation(springAnimationView)
