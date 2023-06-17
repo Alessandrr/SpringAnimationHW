@@ -8,22 +8,38 @@
 import UIKit
 import SpringAnimation
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    let animationSettings = AnimationSettings()
+    var animationSettings = AnimationSettings()
 
     @IBOutlet var springAnimationView: SpringView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    @IBOutlet var settingsLabel: UILabel!
 
-    @IBAction func animationButtonTapped() {
-        springAnimationView.animation = animationSettings.getAnimation()
-        springAnimationView.curve = animationSettings.getCurve()
-        springAnimationView.animate()
+    @IBAction func animationButtonTapped(_ sender: UIButton) {
+        updateSettingsLabel()
+        launchViewAnimation(springAnimationView)
+        animationSettings.getNewSettings()
+        sender.setTitle("Run \(animationSettings.currentAnimation)", for: .normal)
     }
     
+    private func launchViewAnimation(_ view: SpringView) {
+        view.animation = animationSettings.currentAnimation
+        view.curve = animationSettings.currentCurve
+        view.force = animationSettings.currentForce
+        view.damping = animationSettings.currentDamping
+        view.velocity = animationSettings.currentVelocity
+        
+        view.animate()
+    }
+    
+    private func updateSettingsLabel() {
+        settingsLabel.text = """
+        Preset: \(animationSettings.currentAnimation)
+        Curve: \(animationSettings.currentCurve)
+        Force: \(String(format: "%.2f", animationSettings.currentForce))
+        Damping: \(String(format: "%.2f", animationSettings.currentDamping))
+        Velocity: \(String(format: "%.2f", animationSettings.currentVelocity))
+        """
+    }
 }
 

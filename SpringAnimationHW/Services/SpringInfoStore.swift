@@ -8,7 +8,7 @@
 import Foundation
 
 
-class SpringInfoStore {
+final class SpringInfoStore {
     static let shared = SpringInfoStore()
     
     let animations = [

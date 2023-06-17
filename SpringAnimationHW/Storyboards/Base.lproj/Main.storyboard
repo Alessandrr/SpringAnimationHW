@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,18 +13,41 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpringAnimationHW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oD8-d3-zeW" customClass="SpringView" customModule="SpringAnimation">
-                                <rect key="frame" x="72.333333333333343" y="104.00000000000001" width="269.33333333333326" height="179.33333333333337"/>
+                                <rect key="frame" x="75" y="107.00000000000001" width="278" height="185.33333333333337"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-gu-1l5">
+                                        <rect key="frame" x="20" y="38.333333333333336" width="238" height="108.33333333333331"/>
+                                        <string key="text">Preset: shake
+Curve: easeIn
+Force: 1.00
+Damping: 0.00
+Velocity: 1.00</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eNh-gu-1l5" secondAttribute="trailing" constant="20" id="K6b-he-agg"/>
+                                    <constraint firstItem="eNh-gu-1l5" firstAttribute="centerY" secondItem="oD8-d3-zeW" secondAttribute="centerY" id="gYz-YW-0mP"/>
+                                    <constraint firstItem="eNh-gu-1l5" firstAttribute="leading" secondItem="oD8-d3-zeW" secondAttribute="leading" constant="20" id="m0b-cc-m0f"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAK-k4-LV3">
-                                <rect key="frame" x="72.333333333333343" y="718.33333333333337" width="269.33333333333326" height="30"/>
+                                <rect key="frame" x="75" y="743.33333333333337" width="278" height="30"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Run">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -33,7 +56,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="animationButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="pNQ-Ae-R3M"/>
+                                    <action selector="animationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ilX-ai-rUq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,6 +73,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="settingsLabel" destination="eNh-gu-1l5" id="HYJ-gf-fR9"/>
                         <outlet property="springAnimationView" destination="oD8-d3-zeW" id="JTx-Rb-7QX"/>
                     </connections>
                 </viewController>
@@ -59,6 +83,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
