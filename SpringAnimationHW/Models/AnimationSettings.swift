@@ -9,28 +9,33 @@ import Foundation
 
 struct AnimationSettings {
     
-    var currentAnimation: String = "shake"
-    var currentCurve: String = "easeIn"
+    var currentAnimation: String
+    var currentCurve: String
+
+    var currentForce: Double
+    var currentDamping: Double
+    var currentVelocity: Double
     
-    let minForce = 1.0
-    let maxForce = 4.5
-    var currentForce = 1.0
+    var description: String {
+        """
+        Preset: \(currentAnimation)
+        Curve: \(currentCurve)
+        Force: \(String(format: "%.2f", currentForce))
+        Damping: \(String(format: "%.2f", currentDamping))
+        Velocity: \(String(format: "%.2f", currentVelocity))
+        """
+    }
     
-    let minDamping = 0.0
-    let maxDamping = 1.0
-    var currentDamping = 0.0
-    
-    let minVelocity = 0.0
-    let maxVelocity = 1.0
-    var currentVelocity = 1.0
-    
-    mutating func getNewSettings() {
+    static func getNewSettings() -> AnimationSettings {
         let data = SpringInfoStore.shared
         
-        currentAnimation = data.animations.randomElement() ?? "shake"
-        currentCurve = data.curves.randomElement() ?? "easeIn"
-        currentForce = Double.random(in: minForce...maxForce)
-        currentDamping = Double.random(in: minForce...maxForce)
-        currentVelocity = Double.random(in: minVelocity...maxVelocity)
+        let animation = AnimationSettings(
+            currentAnimation: data.animations.randomElement() ?? "shake",
+            currentCurve: data.curves.randomElement() ?? "easeIn",
+            currentForce: Double.random(in: 1...4.5),
+            currentDamping: Double.random(in: 0...1),
+            currentVelocity: Double.random(in: 0...1)
+        )
+        return animation
     }
 }

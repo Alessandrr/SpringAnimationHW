@@ -13,33 +13,27 @@ final class AnimationViewController: UIViewController {
     @IBOutlet var springAnimationView: SpringView!
     @IBOutlet var settingsLabel: UILabel!
 
-    var animationSettings = AnimationSettings()
+    var animationSettings: AnimationSettings!
+    
+    override func viewDidLoad() {
+        animationSettings = AnimationSettings.getNewSettings()
+    }
     
     @IBAction func animationButtonTapped(_ sender: UIButton) {
-        updateSettingsLabel()
-        launchViewAnimation(springAnimationView)
-        animationSettings.getNewSettings()
+        settingsLabel.text = animationSettings.description
+        launchViewAnimation()
+        animationSettings = AnimationSettings.getNewSettings()
         sender.setTitle("Run \(animationSettings.currentAnimation)", for: .normal)
     }
     
-    private func launchViewAnimation(_ view: SpringView) {
-        view.animation = animationSettings.currentAnimation
-        view.curve = animationSettings.currentCurve
-        view.force = animationSettings.currentForce
-        view.damping = animationSettings.currentDamping
-        view.velocity = animationSettings.currentVelocity
-        
-        view.animate()
+    private func launchViewAnimation() {
+        springAnimationView.animation = animationSettings.currentAnimation
+        springAnimationView.curve = animationSettings.currentCurve
+        springAnimationView.force = animationSettings.currentForce
+        springAnimationView.damping = animationSettings.currentDamping
+        springAnimationView.velocity = animationSettings.currentVelocity
+        springAnimationView.animate()
     }
-    
-    private func updateSettingsLabel() {
-        settingsLabel.text = """
-        Preset: \(animationSettings.currentAnimation)
-        Curve: \(animationSettings.currentCurve)
-        Force: \(String(format: "%.2f", animationSettings.currentForce))
-        Damping: \(String(format: "%.2f", animationSettings.currentDamping))
-        Velocity: \(String(format: "%.2f", animationSettings.currentVelocity))
-        """
-    }
+
 }
 
