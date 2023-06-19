@@ -17,6 +17,7 @@ final class AnimationViewController: UIViewController {
     
     override func viewDidLoad() {
         animationSettings = AnimationSettings.getNewSettings()
+        settingsLabel.text = animationSettings.description
     }
     
     @IBAction func animationButtonTapped(_ sender: UIButton) {
