@@ -11,19 +11,18 @@ import SpringAnimation
 final class AnimationViewController: UIViewController {
     
     @IBOutlet var springAnimationView: SpringView!
-    @IBOutlet var settingsLabel: UILabel!
-
-    var animationSettings: AnimationSettings!
-    
-    override func viewDidLoad() {
-        animationSettings = AnimationSettings.getNewSettings()
-        settingsLabel.text = animationSettings.description
+    @IBOutlet var settingsLabel: UILabel! {
+        didSet {
+            settingsLabel.text = animationSettings.description
+        }
     }
+
+    private var animationSettings = Animation.getRandomAnimation()
     
     @IBAction func animationButtonTapped(_ sender: UIButton) {
         settingsLabel.text = animationSettings.description
         launchViewAnimation()
-        animationSettings = AnimationSettings.getNewSettings()
+        animationSettings = Animation.getRandomAnimation()
         sender.setTitle("Run \(animationSettings.currentAnimation)", for: .normal)
     }
     

@@ -1,5 +1,5 @@
 //
-//  AnimationSettings.swift
+//  Animation.swift
 //  SpringAnimationHW
 //
 //  Created by Aleksandr Mamlygo on 16.06.23.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct AnimationSettings {
+struct Animation {
     
-    var currentAnimation: String
-    var currentCurve: String
-
-    var currentForce: Double
-    var currentDamping: Double
-    var currentVelocity: Double
+    let currentAnimation: String
+    let currentCurve: String
+    
+    let currentForce: Double
+    let currentDamping: Double
+    let currentVelocity: Double
     
     var description: String {
         """
@@ -26,10 +26,10 @@ struct AnimationSettings {
         """
     }
     
-    static func getNewSettings() -> AnimationSettings {
+    static func getRandomAnimation() -> Animation {
         let data = SpringInfoStore.shared
         
-        let animation = AnimationSettings(
+        let animation = Animation(
             currentAnimation: data.animations.randomElement() ?? "shake",
             currentCurve: data.curves.randomElement() ?? "easeIn",
             currentForce: Double.random(in: 1...4.5),

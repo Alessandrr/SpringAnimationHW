@@ -15,7 +15,7 @@
 		1FC438872A3C999600B645F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC438852A3C999600B645F0 /* LaunchScreen.storyboard */; };
 		1FC438902A3C9A3900B645F0 /* SpringAnimation in Frameworks */ = {isa = PBXBuildFile; productRef = 1FC4388F2A3C9A3900B645F0 /* SpringAnimation */; };
 		1FC438952A3C9AC400B645F0 /* SpringInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC438942A3C9AC400B645F0 /* SpringInfoStore.swift */; };
-		1FC4389B2A3CB14100B645F0 /* AnimationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4389A2A3CB14100B645F0 /* AnimationSettings.swift */; };
+		1FC4389B2A3CB14100B645F0 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC4389A2A3CB14100B645F0 /* Animation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		1FC438862A3C999600B645F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FC438882A3C999600B645F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FC438942A3C9AC400B645F0 /* SpringInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringInfoStore.swift; sourceTree = "<group>"; };
-		1FC4389A2A3CB14100B645F0 /* AnimationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSettings.swift; sourceTree = "<group>"; };
+		1FC4389A2A3CB14100B645F0 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +62,11 @@
 		1FC438792A3C999300B645F0 /* SpringAnimationHW */ = {
 			isa = PBXGroup;
 			children = (
+				1FC438832A3C999600B645F0 /* Assets.xcassets */,
 				1FC438962A3C9B0100B645F0 /* Services */,
 				1FC438912A3C9A4B00B645F0 /* Config */,
 				1FC438932A3C9A7300B645F0 /* View Controllers */,
 				1FC438922A3C9A6800B645F0 /* Storyboards */,
-				1FC438832A3C999600B645F0 /* Assets.xcassets */,
 				1FC438992A3CAD4700B645F0 /* Models */,
 			);
 			path = SpringAnimationHW;
@@ -110,7 +110,7 @@
 		1FC438992A3CAD4700B645F0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1FC4389A2A3CB14100B645F0 /* AnimationSettings.swift */,
+				1FC4389A2A3CB14100B645F0 /* Animation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				1FC438952A3C9AC400B645F0 /* SpringInfoStore.swift in Sources */,
 				1FC4387F2A3C999300B645F0 /* AnimationViewController.swift in Sources */,
 				1FC4387B2A3C999300B645F0 /* AppDelegate.swift in Sources */,
-				1FC4389B2A3CB14100B645F0 /* AnimationSettings.swift in Sources */,
+				1FC4389B2A3CB14100B645F0 /* Animation.swift in Sources */,
 				1FC4387D2A3C999300B645F0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
